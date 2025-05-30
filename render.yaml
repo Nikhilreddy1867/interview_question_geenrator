@@ -2,8 +2,9 @@ services:
   - type: web
     name: interview-question-generator
     env: python
-    buildCommand: cd flask_backend && pip install -r requirements.txt
-    startCommand: cd flask_backend && gunicorn app:app
+    rootDir: prooo/flask_backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
     envVars:
       - key: PYTHON_VERSION
         value: 3.9.12
